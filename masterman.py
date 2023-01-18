@@ -6,6 +6,11 @@ class masterman:
     #    pass
 
 
+    def reverse(self, input:str) -> str:
+
+        return input[::-1]
+
+
     def atbash(self, input:str) -> str:
 
         '''
@@ -90,3 +95,5 @@ if __name__ == "__main__":
     #print(master.atbash("EZIVMMVHHVIEZMGYVW"))
 
     print(master.caesar("IHSSYVVTTHWCHYLUULZ", offset = 19, mode = "decypher"))
+
+    #print(master.reverse("jon"))

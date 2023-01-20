@@ -84,6 +84,68 @@ class masterman:
 
 
 
+
+
+    def railfence(self, input: str, offset: int, rails: int, mode = "decypher") -> str:
+
+        fence_rails = ["" for _ in range(rails)]
+        
+        if mode != "decypher":
+
+            direction = "down"
+
+            count = 0
+
+            for char in input:
+
+                if direction == "down": 
+
+                    fence_rails[count] += char
+
+                else: 
+
+                    fence_rails[rails-1 - count ] +=char
+
+                count += 1
+
+                if count == rails-1 and direction == "down":
+
+                    direction = "up"
+
+                    count = 0
+
+                elif count == rails-1 and direction == "up":
+
+                    direction = "down"
+
+                    count = 0
+
+            cypher = ""
+
+            for char_group in fence_rails:
+
+                cypher += char_group
+
+
+            return cypher
+
+
+        asigned_rail = []
+
+        for index, char in enumerate(input):
+
+            if index == 0:
+
+                
+
+
+
+
+
+        return 0
+
+
+
  
 
 
@@ -92,8 +154,8 @@ if __name__ == "__main__":
 
     master = masterman()
 
-    #print(master.atbash("EZIVMMVHHVIEZMGYVW"))
+    print(master.reverse(master.railfence("TRAVECYATTICPERONNE",0, rails = 5, mode = "cypher")))
 
-    print(master.caesar("IHSSYVVTTHWCHYLUULZ", offset = 19, mode = "decypher"))
 
-    #print(master.reverse("jon"))
+
+ 
